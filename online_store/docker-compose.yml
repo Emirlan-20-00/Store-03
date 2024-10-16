@@ -1,7 +1,7 @@
 services:
 
   web:
-    build: ../.venv
+    build: .
     command: >
       bash -c "./manage.py collectstatic --noinput && ./manage.py makemigrations && ./manage.py migrate && gunicorn -b 0.0.0.0:8000 online_store.wsgi:application"
     volumes:
